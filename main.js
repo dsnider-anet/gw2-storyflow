@@ -4,14 +4,28 @@ import FlexboxBuilder from './builder.js';
 document.getElementById("token").value = localStorage.getItem('token') || "";
 
 let questData = null;
+let storiesData = null;
+let backstoryData = null;
+
+const url = new URL(window.location.href);
+const lang = url.searchParams.get("lang") || "en";
+
 document.getElementById("render").addEventListener("click", () => {
-    render(document.getElementById("token").value);
+    render(document.getElementById("token").value, lang);
 });
 
-async function render(token) {
+async function render(token, lang) {
     if (!questData) {
-        const response = await fetch("https://api.guildwars2.com/v2/quests?ids=all");
+        const response = await fetch(`https://api.guildwars2.com/v2/quests?ids=all&lang=${lang}`);
         questData = await response.json();
+    }
+    if (!storiesData) {
+        const response = await fetch(`https://api.guildwars2.com/v2/stories?ids=all&lang=${lang}`);
+        storiesData = await response.json();
+    }
+    if (!backstoryData) {
+        const response = await fetch(`https://api.guildwars2.com/v2/backstory/answers?ids=all&lang=${lang}`);
+        backstoryData = await response.json();
     }
 
     let completedQuests = [];
@@ -25,11 +39,11 @@ async function render(token) {
         }
     }
     
-    const builder = new FlexboxBuilder(questData, completedQuests);
+    const builder = new FlexboxBuilder(questData, completedQuests, storiesData, backstoryData);
     const flow = renderStoryFlow(builder);
     const outputElement = document.getElementById("output");
     outputElement.innerHTML = "";
     outputElement.appendChild(flow);
     localStorage.setItem('token', token);
 };
-render(localStorage.getItem('token'));
+render(localStorage.getItem('token'), lang);

@@ -20,16 +20,30 @@ function h(tag, option, children, parent) {
 }
 
 export default class FlexboxBuilder {
-  constructor(questData, completedQuests) {
+  constructor(questData, completedQuests, storiesData, backstoryData) {
     // quest data from gw2 api
     this.questData = questData;
     this.questsById = {};
     for (let quest of questData) {
       this.questsById[quest.id] = quest.name;
     }
-    this.questsById[0] = "Quest name not yet "
+    this.questsById[0] = "???"
+
     // list of completed quest ids
     this.completedQuests = completedQuests;
+
+    // backstory data from gw2 api
+    this.backstoriesById = {};
+    for (let backstory of backstoryData || []) {
+      this.backstoriesById[backstory.id] = backstory.title;
+    }
+
+    // stories data from gw2 api
+    this.chaptersById = {};
+    for (let story of storiesData || []) {
+      this.chaptersById[story.id] = story.chapters.map((c) => c.name);
+    }
+
   }
 
   vbox(title, children) {
@@ -48,5 +62,13 @@ export default class FlexboxBuilder {
 
   quest(id) {
     return h("div", {"className" : `quest ${this.completedQuests.includes(id) && "complete" || ""}`}, [ h("span", {}, [ this.questsById[id] || `${id}` ]) ])
+  }
+
+  backstory(id, children) {
+    return this.vbox(this.backstoriesById[id], children);
+  }
+
+  chapter(id, chapter, children) {
+    return this.vbox(this.chaptersById[id][chapter], children);
   }
 }
