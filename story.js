@@ -337,7 +337,7 @@ export default function renderStoryFlow(b) {
             b.hbox(null, [
                 b.vbox("Durmand Priory", [b.quest(285)]),
                 b.vbox("Order of Whispers", [b.quest(290)]),
-                b.vbox("Vigil", [b.quest(527)]),
+                b.vbox("Vigil", [b.quest(295)]),
             ]),
             b.quest(282),
             b.hbox(null, [
