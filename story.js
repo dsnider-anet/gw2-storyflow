@@ -1,6 +1,6 @@
 export default function renderStoryFlow(b) {
     return b.vbox(null, [
-        b.hbox("Part 1", [
+        b.hbox(null, [
             b.chapter(8, 0, [
                 b.quest(15),
                 b.hbox(null, [
@@ -79,24 +79,24 @@ export default function renderStoryFlow(b) {
                     ]),
                 ])
             ]),
-            b.vbox("Norn - Forging a Legend", [
+            b.chapter(2, 0, [
                 b.quest(154),
                 b.hbox(null, [
-                    b.vbox("Defeat Our Ancient Foes", [
+                    b.backstory("26-121", [
                         b.quest(155),
                         b.quest(157),
                         b.quest(158),
                         b.hbox(null, [b.quest(160), b.quest(161)]),
                         b.quest(156),
                     ]),
-                    b.vbox("Protect the Spirits", [
+                    b.backstory("26-122", [
                         b.quest(159),
                         b.quest(163),
                         b.quest(165),
                         b.hbox(null, [b.quest(167), b.quest(166)]),
                         b.quest(172)
                     ]),
-                    b.vbox("Guard the Mists", [
+                    b.backstory("26-123", [
                         b.quest(162),
                         b.quest(164),
                         b.hbox(null, [b.quest(169), b.quest(168)]),
@@ -105,24 +105,24 @@ export default function renderStoryFlow(b) {
                     ]),
                 ])
             ]),
-            b.vbox("Sylvari - Following the Dream", [
+            b.chapter(7, 0, [
                 b.quest(201),
                 b.hbox(null, [
-                    b.vbox("White Stag", [
+                    b.backstory("32-141", [
                         b.quest(202),
                         b.quest(206),
                         b.quest(204),
                         b.hbox(null, [b.quest(210), b.quest(207)]),
                         b.quest(209),
                     ]),
-                    b.vbox("Green Huntsman", [
+                    b.backstory("32-142", [
                         b.quest(203),
                         b.quest(205),
                         b.quest(208),
                         b.hbox(null, [b.quest(218), b.quest(211)]),
                         b.quest(219)
                     ]),
-                    b.vbox("Shield of the Moon", [
+                    b.backstory("32-143", [
                         b.quest(212),
                         b.quest(213),
                         b.quest(214),
@@ -132,109 +132,119 @@ export default function renderStoryFlow(b) {
                 ])
             ]),
         ]),
-        b.hbox("Part 2", [
-            b.hbox("Asura - Interested Parties", [
-                b.vbox("VAL-A Golem", [
-                    b.quest(39),
-                    b.quest(40),
-                    b.hbox(null, [b.quest(41), b.quest(43)]),
-                    b.quest(42),
-                ]),
-                b.vbox("Transatmospheric Converter", [
-                    b.quest(44),
-                    b.quest(45),
-                    b.hbox(null, [b.quest(46), b.quest(48)]),
-                    b.quest(47),
-                ]),
-                b.vbox("Infinity Ball", [
-                    b.quest(34),
-                    b.quest(35),
-                    b.hbox(null, [b.quest(36), b.quest(37)]),
-                    b.quest(38),
+        b.hbox(null, [
+            b.chapter(8, 1, [
+                b.hbox(null, [
+                    b.backstory("11-70", [
+                        b.quest(39),
+                        b.quest(40),
+                        b.hbox(null, [b.quest(41), b.quest(43)]),
+                        b.quest(42),
+                    ]),
+                    b.backstory("11-71", [
+                        b.quest(44),
+                        b.quest(45),
+                        b.hbox(null, [b.quest(46), b.quest(48)]),
+                        b.quest(47),
+                    ]),
+                    b.backstory("11-72", [
+                        b.quest(34),
+                        b.quest(35),
+                        b.hbox(null, [b.quest(36), b.quest(37)]),
+                        b.quest(38),
+                    ]),
                 ]),
             ]),
-            b.hbox("Charr - Sins of the Father", [
-                b.vbox("Loyal Soldier", [
+            b.chapter(1, 1, [
+                b.hbox(null, [
+                b.backstory("17-92", [
                     b.quest(78),
                     b.quest(79),
                     b.hbox(null, [b.quest(81), b.quest(80)]),
                     b.quest(82)
                 ]),
-                b.vbox("Honorless Gladium", [
+                b.backstory("17-94", [
                     b.quest(83),
                     b.quest(84),
                     b.quest(85),
                     b.hbox(null, [b.quest(86), b.quest(87)]),
                 ]),
-                b.vbox("Sorcerous Shaman", [
+                b.backstory("17-93", [
                     b.quest(88),
                     b.quest(89),
                     b.quest(90),
                     b.hbox(null, [b.quest(91), b.quest(92)])
                 ]),
+                ]),
             ]),
-            b.hbox("Human - Shadows of the Past", [
-                b.vbox("Unknown Parents", [
+            b.chapter(3, 1, [
+                b.hbox(null, [
+                b.backstory("22-108", [
                     b.quest(129),
                     b.quest(130),
                     b.hbox(null, [b.quest(131), b.quest(132)]),
                     b.quest(133),
                 ]),
-                b.vbox("Dead Sister", [
+                b.backstory("22-109", [
                     b.quest(125),
                     b.hbox(null, [b.quest(127), b.quest(126)]),
                     b.quest(128),
                     b.quest(139)
                 ]),
-                b.vbox("Missed Opportunity", [
+                b.backstory("22-110", [
                     b.quest(134),
                     b.quest(135),
                     b.hbox(null, [b.quest(137), b.quest(136)]),
                     b.quest(138),
                 ]),
+                ]),
             ]),
-            b.hbox("Norn - Everyone Makes Mistakes", [
-                b.vbox("Blacked Out", [
+            b.chapter(2, 1, [
+                b.hbox(null, [
+                b.backstory("27-124", [
                     b.quest(173),
                     b.quest(174),
                     b.hbox(null, [b.quest(182), b.quest(176)]),
                     b.quest(181),
                 ]),
-                b.vbox("Revenge", [
+                b.backstory("27-125", [
                     b.quest(175),
                     b.hbox(null, [b.quest(177), b.quest(178)]),
                     b.quest(179),
                     b.quest(180),
                 ]),
-                b.vbox("Lost an Heirloom", [
+                b.backstory("27-126", [
                     b.quest(184),
                     b.quest(183),
                     b.quest(185),
                     b.hbox(null, [b.quest(186), b.quest(187)]),
                 ]),
+                ]),
             ]),
-            b.hbox("Sylvari - The Teachings of Ventari", [
-                b.vbox("Act With Wisdom", [
+            b.chapter(7, 1, [
+                b.hbox(null, [
+                b.backstory("31-137", [
                     b.quest(230),
                     b.quest(231),
                     b.quest(232),
                     b.hbox(null, [b.quest(233), b.quest(234)]),
                 ]),
-                b.vbox("All things have a right to grow", [
+                b.backstory("31-138", [
                     b.quest(220),
                     b.quest(221),
                     b.hbox(null, [b.quest(222), b.quest(223)]),
                     b.quest(224),
                 ]),
-                b.vbox("Where Life Goes", [
+                b.backstory("31-140", [
                     b.quest(225),
                     b.quest(226),
                     b.hbox(null, [b.quest(227), b.quest(228)]),
                     b.quest(229),
                 ]),
+                ]),
             ]),
         ]),
-        b.hbox("Part 3", [
+        b.hbox(null, [
             b.chapter(8, 2, [
                     b.quest(49),
                     b.hbox(null, [b.quest(50), b.quest(51)]),

@@ -41,9 +41,14 @@ export default class FlexboxBuilder {
     // stories data from gw2 api
     this.chaptersById = {};
     for (let story of storiesData || []) {
-      this.chaptersById[story.id] = story.chapters.map((c) => c.name);
+      this.chaptersById[story.id] = story.chapters.map((chapter) => {
+        let name = chapter.name;
+        if (story.races) {
+          name += ` (${story.races.join(", ")})`;
+        }
+        return name;
+      });
     }
-
   }
 
   vbox(title, children) {
